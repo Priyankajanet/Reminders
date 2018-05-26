@@ -1,0 +1,51 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+  
+  
+  <div class="row main">
+    <div class="col-2 call">
+      <label> S.NO:</label>
+  
+    </div>
+    <div class="col-4 call">
+      <label>reminder</label>
+  
+    </div>
+    <div class="col-6 call">
+      <label>description</label>
+    </div>
+  </div>
+  
+  <div class="row main">
+    <div class="col-2">
+      <input type="number" name="S.NO" placeholder="enter here" [(ngModel)]="sNo">
+    </div>
+    <div class="col-4">
+      <input class="reminder-de" type="text" placeholder="enter here" [(ngModel)]="reminder">
+    </div>
+    <div class="col-6">
+      <input class="reminder-de" name="description" placeholder="description here" [(ngModel)]="reminderDsc">
+    </div>
+  </div>
+  <div class="reminder-de call">
+    <input id="remind" type="submit" name="submit" value="submit" (click)="add()">
+  </div>
+  
+  <div *ngFor="let i of arrayRe">
+  
+  
+  
+  <div class="row main data">
+      <div class="col-2 call" ><label>{{i.sNo}}
+      </label></div>
+      <div class="col-2 call" ><label>{{i.reminder}}</label></div>
+      <div class="col-3 call" ><label>{{i.reminderDsc}}</label></div>
+      <div class="col-2 call" ><input type="button" value="Delete" (click)="deleteReminder(i.index)"></div>
+      <div class="col-2 call" ><input type="button" value="edit" (click)="editReminder(i.index)"></div>
+    </div>
+  </div>
+   
