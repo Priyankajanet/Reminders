@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      reminder
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-list>
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-input type="number" [(ngModel)]="no" name="no" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-input type="text" placeholder="Description" [(ngModel)]="description" name="description"  ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Amount</ion-label>
+        <ion-input type="text" placeholder="name" [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list  *ngFor="let item of items" let i=index>
+      {{item.no}}
+      {{item.name}}
+      {{item.description}}
+      
+      </ion-list>
+      <button ion-button block (click)="insertData()">save</button>
+      <button ion-button type="submit"  (click)="findAll()" block>Get Data</button>
+     
